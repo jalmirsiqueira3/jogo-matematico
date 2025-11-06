@@ -1,0 +1,127 @@
+#inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    min-width: fit-content;
+    gap: 10px;
+    margin-bottom: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#coracoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    min-width: fit-content;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#pontos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    min-width: fit-content;
+    margin-bottom: 20px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#pontos p {
+    font-family: "tiny5", sans-serif;
+    color: white;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+p {
+    font-size: 25px;
+}
+
+#questao {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    min-width: fit-content;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#questao p {
+    font-size: 40px;
+    min-width: fit-content;
+}
+
+#alternativas {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    min-width: fit-content;
+    padding: 20px;
+    gap: 15px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#alternativas button {
+    font-size: 30px;
+}
+
+#mensagem-resposta {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding: 20px;
+    gap: 15px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#timer, #jogador, #pontuacao {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    min-width: fit-content;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 3px solid white;
+    border-radius: 10px;
+}
+
+#jogador {
+    width: 9%;
+    padding: 0;
+}
+
+#pontuacao {
+    flex-direction: column;
+    width: 8%;
+    display: block;
+    margin-bottom: 0;
+}
+
+#timer {
+    width: 5%;
+    height: fit-content;
+}
+
+#resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
