@@ -4,29 +4,48 @@
     align-items: center;
     width: 12%;
     min-width: fit-content;
-    gap: 10px;
-    margin-bottom: 20px;
+    padding: 10px;
     border: 3px solid white;
     border-radius: 10px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 1500px;
+  width: 95%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    margin-bottom: 20px;
+}
+
 #coracoes {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10%;
+    width: auto;
     min-width: fit-content;
-    gap: 10px;
+    gap: 5px;
     margin-bottom: 20px;
     padding: 20px;
     border: 3px solid white;
     border-radius: 10px;
 }
 
+.coracao {
+    width: 2vw;
+    height: 2vw;
+    filter: invert();
+}
+
 #pontos {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 12%;
     min-width: fit-content;
     margin-bottom: 20px;
@@ -34,36 +53,28 @@
     border-radius: 10px;
 }
 
-#pontos p {
-    font-family: "tiny5", sans-serif;
-    color: white;
-}
-
 #container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 0 auto;
-}
-
-p {
-    font-size: 25px;
 }
 
 #questao {
     display: flex;
     justify-content: center;
+    padding: 40px;
     width: 80%;
     min-width: fit-content;
+    margin-bottom: 15px;
     border: 3px solid white;
     border-radius: 10px;
 }
 
 #questao p {
-    font-size: 40px;
-    min-width: fit-content;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 #alternativas {
@@ -71,30 +82,39 @@ p {
     justify-content: center;
     width: 60%;
     min-width: fit-content;
-    padding: 20px;
+    margin-top: 15px;
+    padding: 15px;
     gap: 15px;
     border: 3px solid white;
     border-radius: 10px;
 }
 
-#alternativas button {
-    font-size: 30px;
+#mensagem {
+    padding: 10px;
 }
 
-#mensagem-resposta {
-    display: flex;
-    justify-content: center;
-    width: 60%;
-    padding: 20px;
-    gap: 15px;
-    border: 3px solid white;
-    border-radius: 10px;
+#mensagem p {
+    display: contents;
+    font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
-#timer, #jogador, #pontuacao {
+#vencer-jogo, #pontuacao-perfeita {
+    display: flex;
+    flex-direction: column;
+    font-size: clamp(2rem, 8vw, 6rem);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#pontuacao-perfeita {
+    margin-bottom: 0;
+    color: gold;
+}
+
+#timer, #jogador, #pontuacao, #pontuacao-final {
     display: flex;
     justify-content: center;
-    height: fit-content;
+    text-align: center;
     min-width: fit-content;
     margin-bottom: 10px;
     padding: 10px;
@@ -102,26 +122,35 @@ p {
     border-radius: 10px;
 }
 
-#jogador {
-    width: 9%;
-    padding: 0;
-}
-
-#pontuacao {
-    flex-direction: column;
-    width: 8%;
+#pontuacao, #pontuacao-final {
     display: block;
+    flex-direction: column;
     margin-bottom: 0;
 }
 
 #timer {
     width: 5%;
-    height: fit-content;
+    padding: 20px;
+}
+
+#timer p {
+    display: contents;
 }
 
 #resultado {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
+}
+
+#resultado h1 {
+    font-size: clamp(5rem, 10vw, 6rem);
+}
+
+#pontuacao-final p {
+    display: block;
+    flex-direction: column;
+    font-size: clamp(2rem, 3vw, 2.5rem);
 }

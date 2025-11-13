@@ -39,9 +39,7 @@ function vidas() {
         const coracao = document.createElement("img")
         coracao.src = "img/coracao.png"
         coracao.alt = "Coração"
-        coracao.width = 32
-        coracao.height = 32
-        coracao.style.filter = "invert(1)"
+        coracao.className = "coracao"
         coracao.classList.add("coracao")
         coracoes.appendChild(coracao)
     }
@@ -102,7 +100,7 @@ function verificarQuestao(questao, acertos, botao, indice, questoes) {
 
     indice++
 
-    if (indice < 15) {
+    if (indice < 3) {
         setTimeout(() => gerarQuestao(indice, acertos, questoes), 1000)
     } else {
         setTimeout(() => venceuJogo(acertos), 1000)
@@ -117,7 +115,7 @@ function fimDeJogo() {
     mainContainer.innerHTML = ""
 
     coracoes.style.height = "32px"
-    mainContainer.style.fontSize = "100px"
+    mainContainer.style.fontSize = "clamp(2rem, 8vw, 7rem)"
     mainContainer.textContent = "Game Over!"
     setTimeout(() => window.location.reload(), 3000)
 }
@@ -129,14 +127,12 @@ function venceuJogo(acertos) {
 
     mainContainer.innerHTML = ""
 
-    mainContainer.style.fontSize = "100px"
-    mainContainer.style.marginBottom = "50px"
+    mainContainer.id = "vencer-jogo"
     mainContainer.textContent = "Parabéns! Você completou o jogo!★"
 
-    if (acertos === 15) {
+    if (acertos === 3) {
         const mensagemPerfeito = document.createElement("div")
-        mensagemPerfeito.style.fontSize = "100px"
-        mensagemPerfeito.style.color = "gold"
+        mensagemPerfeito.id = "pontuacao-perfeita"
         mensagemPerfeito.textContent = "Incrível! Você acertou todas as questões! ♕"
         mainContainer.appendChild(mensagemPerfeito)
     }
@@ -182,7 +178,7 @@ function mensagemResposta(correta) {
     const mensagemDiv = document.getElementById("mensagem")
 
     const mensagem = document.createElement("p")
-    mensagem.style.fontSize = "40px"
+    
     if (correta) {
         mensagem.textContent = "Resposta Correta! ✅"
         mensagem.style.color = "green"
@@ -235,7 +231,7 @@ function jogoMultiPlayer(questoes) {
 }
 
 function contador(pontuacao, jogadorAtual, tempoTexto, jogadorTexto, questoes) {
-    let tempoRestante = 60
+    let tempoRestante = 30
     jogadorTexto.textContent = `Jogador ${jogadorAtual}`;
     tempoTexto.textContent = `${tempoRestante}s`
 
@@ -330,18 +326,12 @@ function finalizarPartidaMultiplayer(pontuacao) {
 
     resultadoDiv.id = "resultado"
 
-    resultado.style.fontSize = "100px"
-    resultado.style.textAlign = "center"
     resultado.textContent = vencedor
 
-    pontuacoesDiv.id = "pontuacao"
-    pontuacoesDiv.style.fontSize = "40px"
+    pontuacoesDiv.id = "pontuacao-final"
 
     p1.textContent = `P1: ${pontuacao[1]} Pontos`
     p2.textContent = `P2: ${pontuacao[2]} Pontos`
-    p1.style.fontSize = "60px"
-    p2.style.fontSize = "60px"
-
 
     pontuacoesDiv.appendChild(p1);
     pontuacoesDiv.appendChild(p2);
