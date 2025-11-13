@@ -20,19 +20,19 @@ a {
 
 h1 {
   display: contents;
-  font-size: clamp(1rem, 3vw, 2.5rem);
+  font-size: clamp(1rem, 5vw, 2rem);
   margin-bottom: 10px;
 }
 
 p {
-  font-size: clamp(1rem, 4vw, 1.7rem)
+  font-size: clamp(1rem, 5vw, 1.8em)
 }
 
 button {
   padding: 10px 20px;
   font-family: "tiny5", sans-serif;
   font-weight: bold;
-  font-size: clamp(1rem, 5vw, 1.7rem);
+  font-size: clamp(1rem, 5vw, 1.5rem);
   color: #fff;
   background-color: #333;
   border: 3px solid gray;

@@ -100,7 +100,7 @@ function verificarQuestao(questao, acertos, botao, indice, questoes) {
 
     indice++
 
-    if (indice < 3) {
+    if (indice < 15) {
         setTimeout(() => gerarQuestao(indice, acertos, questoes), 1000)
     } else {
         setTimeout(() => venceuJogo(acertos), 1000)
@@ -130,7 +130,7 @@ function venceuJogo(acertos) {
     mainContainer.id = "vencer-jogo"
     mainContainer.textContent = "Parabéns! Você completou o jogo!★"
 
-    if (acertos === 3) {
+    if (acertos === 15) {
         const mensagemPerfeito = document.createElement("div")
         mensagemPerfeito.id = "pontuacao-perfeita"
         mensagemPerfeito.textContent = "Incrível! Você acertou todas as questões! ♕"
@@ -231,24 +231,23 @@ function jogoMultiPlayer(questoes) {
 }
 
 function contador(pontuacao, jogadorAtual, tempoTexto, jogadorTexto, questoes) {
-    let tempoRestante = 30
+    let tempoRestante = 60
     jogadorTexto.textContent = `Jogador ${jogadorAtual}`;
     tempoTexto.textContent = `${tempoRestante}s`
-
+    
     const timer = setInterval(() => {
         tempoRestante--
         tempoTexto.textContent = `${tempoRestante}s`
+        
         if (tempoRestante <= 0) {
             clearInterval(timer)
-
+            
             if (jogadorAtual === 1) {
                 alert("Tempo acabou! Agora é a vez do Jogador 2!");
-                jogadorAtual = 2
-                gerarQuestaoMultiPlayer(pontuacao, jogadorAtual, questoes);
-                contador(pontuacao, jogadorAtual, tempoTexto, jogadorTexto);
+                gerarQuestaoMultiPlayer(pontuacao, 2, questoes)
+                contador(pontuacao, 2, tempoTexto, jogadorTexto, questoes);
             } else {
                 finalizarPartidaMultiplayer(pontuacao);
-                clearInterval(timer)
                 return
             }
         }
@@ -289,7 +288,11 @@ function gerarQuestaoMultiPlayer(pontuacao, jogadorAtual, questoes) {
                 mensagemResposta(false)
             }
             setTimeout(() => {
-                gerarQuestaoMultiPlayer(pontuacao, jogadorAtual, questoes)
+                if (jogadorAtual === 1) {
+                    gerarQuestaoMultiPlayer(pontuacao, 1, questoes)
+                } else {
+                    gerarQuestaoMultiPlayer(pontuacao, 2, questoes)
+                }
             }, 1000);
         })
         alternativasDiv.appendChild(botao)

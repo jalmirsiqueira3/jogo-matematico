@@ -38,9 +38,8 @@ main {
 }
 
 .coracao {
-    width: 2vw;
-    height: 2vw;
-    filter: invert();
+    width: clamp(2rem, 5vw, 2.5rem);
+    height: clamp(2rem, 5vw, 2.5rem);
 }
 
 #pontos {
@@ -74,7 +73,7 @@ main {
 #questao p {
     margin-block-start: 0;
     margin-block-end: 0;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
 #alternativas {
@@ -101,9 +100,13 @@ main {
 #vencer-jogo, #pontuacao-perfeita {
     display: flex;
     flex-direction: column;
-    font-size: clamp(2rem, 8vw, 6rem);
+    font-size: clamp(2rem, 8vw, 5rem);
     text-align: center;
     margin-bottom: 50px;
+}
+
+#vencer-jogo {
+    gap: 15px;
 }
 
 #pontuacao-perfeita {
@@ -122,10 +125,29 @@ main {
     border-radius: 10px;
 }
 
+#jogador p, #pontuacao p, #pontuacao-final p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#jogador {
+    padding: 15px;
+}
+
 #pontuacao, #pontuacao-final {
-    display: block;
+    display: flex;
     flex-direction: column;
     margin-bottom: 0;
+}
+
+#pontuacao {
+    padding: 10px;
+    gap: 10px;
+}
+
+#pontuacao-final {
+    padding: 20px;
+    gap: 25px;
 }
 
 #timer {
